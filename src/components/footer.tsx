@@ -11,7 +11,7 @@ export const Footer = () => {
         >
           waku.gg
         </a>{" "}
-        to learn more.
+        to learn more
       </div>
     </footer>
   );
