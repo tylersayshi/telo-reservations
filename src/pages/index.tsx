@@ -1,6 +1,5 @@
 import g from 'googleapis';
 import { TeloTable } from '../components/TeloTable';
-import { Input } from '../components/ui/input';
 import { SearchInput } from '../components/SearchInput';
 
 // Note: Only the default export seems to be working
