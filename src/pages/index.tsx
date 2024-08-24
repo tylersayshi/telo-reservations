@@ -7,8 +7,13 @@ import { SearchInput } from '../components/SearchInput';
 const { google } = g;
 
 export default async function HomePage() {
+  const credentials = JSON.parse(process.env.SECRETS_JSON!);
   const auth = await google.auth.getClient({
     scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
+    credentials: {
+      ...credentials,
+      private_key: credentials.private_key.replace(/\\n/g, '\n'),
+    },
   });
 
   const sheets = google.sheets({
