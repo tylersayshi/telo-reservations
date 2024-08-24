@@ -2,16 +2,16 @@
 
 import fs from 'node:fs';
 
-const { SECRET_JSON } = process.env;
+const { SECRETS_JSON } = process.env;
 
-if (!SECRET_JSON) {
-  console.error('SECRET_JSON environment variable is not set.');
+if (!SECRETS_JSON) {
+  console.error('SECRETS_JSON environment variable is not set.');
   process.exit(1);
 }
 
 let jsonData;
 try {
-  jsonData = JSON.parse(SECRET_JSON);
+  jsonData = JSON.parse(SECRETS_JSON);
 } catch (error) {
   console.error('Failed to parse JSON:', error.message);
   process.exit(1);
