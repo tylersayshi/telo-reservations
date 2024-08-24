@@ -1,6 +1,6 @@
 
 [build]
-  command = "./bin/secret-loader.sh && bun run build"
+  command = "./bin/secret-loader.js && bun run build"
   publish = "dist/public"
 [functions]
   included_files = ["private/**"]
