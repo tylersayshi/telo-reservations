@@ -6,8 +6,11 @@ if [ -z "$SECRET_JSON" ]; then
   exit 1
 fi
 
+# Ensure correct JSON formatting and escaping
+JSON_STRING=$(echo "$SECRET_JSON" | jq -R '.' | jq -r '.')
+
 # Parse and output to secrets.json
-echo "$SECRET_JSON" | jq '.' > ./secrets.json
+echo "$JSON_STRING" | jq '.' > ./secrets.json
 
 # Check if jq command succeeded
 if [ $? -eq 0 ]; then
