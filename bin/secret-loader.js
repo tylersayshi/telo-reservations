@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+import fs from 'node:fs';
 
 const { SECRET_JSON } = process.env;
 
