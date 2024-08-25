@@ -41,7 +41,7 @@ export const ThemeToggle = () => {
   return (
     <button
       suppressHydrationWarning
-      className={`w-10 rounded-md border-2 border-solid border-black/20 p-1 text-sm font-bold dark:border-white/20`}
+      className={`h-12 w-12 rounded-md border-2 border-solid border-black/20 p-1 text-sm font-bold dark:border-white/20`}
       onClick={() => {
         if (!localStorage) {
           return;
