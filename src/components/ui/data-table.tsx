@@ -70,77 +70,72 @@ export function DataTable<TData extends Reservation, TValue>({
   }, [receipt]);
 
   return (
-    <>
-      <div
-        className="relative max-h-[85vh] overflow-auto rounded-lg border-2 border-solid border-black/20 dark:border-white/20"
-        ref={parentRef}
-      >
-        <div style={{ height: virtualizer.getTotalSize() }}>
-          <Table>
-            <TableHeader>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <TableRow key={headerGroup.id}>
-                  {headerGroup.headers.map((header) => {
-                    return (
-                      <TableHead key={header.id}>
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext(),
-                            )}
-                      </TableHead>
-                    );
-                  })}
-                </TableRow>
-              ))}
-            </TableHeader>
-            <TableBody>
-              {table.getRowModel().rows?.length ? (
-                virtualizer.getVirtualItems().map((virtualRow, index) => {
-                  const row = table.getRowModel().rows[virtualRow.index]!;
+    <div
+      className="relative max-h-[80vh] overflow-auto rounded-lg border-2 border-solid border-black/20 dark:border-white/20"
+      ref={parentRef}
+    >
+      <div style={{ height: virtualizer.getTotalSize() }}>
+        <Table>
+          <TableHeader>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <TableRow key={headerGroup.id}>
+                {headerGroup.headers.map((header) => {
                   return (
-                    <TableRow
-                      key={`${virtualRow.index}-${index}`}
-                      style={{
-                        height: `${virtualRow.size}px`,
-                        transform: `translateY(${
-                          virtualRow.start - index * virtualRow.size
-                        }px)`,
-                      }}
-                      onClick={() => router.replace(`#${row.original.receipt}`)}
-                      data-state={
-                        receipt === row.original.receipt
-                          ? 'selected'
-                          : undefined
-                      }
-                    >
-                      {row.getVisibleCells().map((cell) => (
-                        <TableCell key={cell.id}>
-                          {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext(),
+                    <TableHead key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext(),
                           )}
-                        </TableCell>
-                      ))}
-                    </TableRow>
+                    </TableHead>
                   );
-                })
-              ) : (
-                <TableRow>
-                  <TableCell
-                    colSpan={columns.length}
-                    className="h-24 text-center"
+                })}
+              </TableRow>
+            ))}
+          </TableHeader>
+          <TableBody>
+            {table.getRowModel().rows?.length ? (
+              virtualizer.getVirtualItems().map((virtualRow, index) => {
+                const row = table.getRowModel().rows[virtualRow.index]!;
+                return (
+                  <TableRow
+                    key={`${virtualRow.index}-${index}`}
+                    style={{
+                      height: `${virtualRow.size}px`,
+                      transform: `translateY(${
+                        virtualRow.start - index * virtualRow.size
+                      }px)`,
+                    }}
+                    onClick={() => router.replace(`#${row.original.receipt}`)}
+                    data-state={
+                      receipt === row.original.receipt ? 'selected' : undefined
+                    }
                   >
-                    No results.
-                  </TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </div>
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                );
+              })
+            ) : (
+              <TableRow>
+                <TableCell
+                  colSpan={columns.length}
+                  className="h-24 text-center"
+                >
+                  No results.
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
       </div>
-      <TableCaption>{data.length} total reservations</TableCaption>
-    </>
+    </div>
   );
 }

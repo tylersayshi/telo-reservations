@@ -2,6 +2,7 @@ import g from 'googleapis';
 import { TeloTable } from '../components/TeloTable';
 import { SearchInput } from '../components/SearchInput';
 import { Reservation } from '../types';
+import { TableCaption } from '../components/ui/table';
 
 // Note: Only the default export seems to be working
 const { google } = g;
@@ -50,9 +51,10 @@ export default async function HomePage() {
   const ids = new Set(rows.map((row) => row[0]!));
 
   return (
-    <div className="-mt-2 flex w-full max-w-[850px] flex-col gap-2">
+    <div className="flex w-full max-w-[850px] flex-col gap-2">
       <SearchInput ids={ids} />
       <TeloTable rows={rowsAsReservations} />
+      <TableCaption>{rows.length} total reservations</TableCaption>
     </div>
   );
 }

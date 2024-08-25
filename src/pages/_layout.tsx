@@ -13,7 +13,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <title>Telo Reservations</title>
         <link rel="icon" href="/images/favicon.png" />
       </head>
-      <body>
+      <body className="max-h-screen overflow-hidden">
         <Header />
         <main className="flex items-center justify-center px-1">
           {children}
