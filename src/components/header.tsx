@@ -3,7 +3,7 @@ import { ThemeToggle } from './ThemeToggle';
 
 export const Header = () => {
   return (
-    <header className="flex w-full p-6 lg:fixed lg:left-0 lg:top-0">
+    <header className="flex w-full p-6">
       <div className="flex w-full justify-between gap-1">
         <div className="flex flex-col gap-1">
           <h2 className="text-lg font-bold tracking-tight">

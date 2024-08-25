@@ -15,7 +15,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         <Header />
-        <main className="flex items-center justify-center px-1 lg:min-h-svh">
+        <main className="flex items-center justify-center px-1">
           {children}
           <img
             src="https://app.piratepx.com/ship?p=67d07cf8-d340-46cf-8560-6e9b462d1d7e"
