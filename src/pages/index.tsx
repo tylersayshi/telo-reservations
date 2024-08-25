@@ -1,9 +1,17 @@
 import g from 'googleapis';
 import { TeloTable } from '../components/TeloTable';
 import { SearchInput } from '../components/SearchInput';
+import { Reservation } from '../types';
 
 // Note: Only the default export seems to be working
 const { google } = g;
+
+const RESERVATION_IND_MAP = new Map<number, keyof Reservation>([
+  [0, 'receipt'],
+  [1, 'number'],
+  [2, 'use'],
+  [3, 'date'],
+]);
 
 export default async function HomePage() {
   const credentials = JSON.parse(process.env.SECRETS_JSON!);
@@ -24,12 +32,6 @@ export default async function HomePage() {
     range: 'A:D',
   });
 
-  const headerRow = response.data.values![0]! as [
-    string,
-    string,
-    string,
-    string,
-  ];
   const rows = response.data.values!.slice(1) as [
     string,
     string,
@@ -37,12 +39,20 @@ export default async function HomePage() {
     string,
   ][];
 
+  const rowsAsReservations = rows.map((row) => {
+    const rowAsReservation = {} as Reservation;
+    for (const [index, key] of RESERVATION_IND_MAP.entries()) {
+      rowAsReservation[key] = row[index]!;
+    }
+    return rowAsReservation;
+  });
+
+  const ids = new Set(rows.map((row) => row[0]!));
+
   return (
     <div className="mt-2 flex w-[850px] flex-col gap-2">
-      <SearchInput />
-      <div className="relative mx-1 overflow-y-hidden rounded-lg border-2 border-solid border-black/20 dark:border-white/20">
-        <TeloTable rows={rows} headerRow={headerRow} />
-      </div>
+      <SearchInput ids={ids} />
+      <TeloTable rows={rowsAsReservations} />
     </div>
   );
 }
