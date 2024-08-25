@@ -15,6 +15,12 @@ export const SearchInput = ({ ids }: { ids: Set<string> }) => {
     }
   }, [search]);
 
+  useEffect(() => {
+    if (receipt && receipt !== search) {
+      setSearch(receipt);
+    }
+  }, [receipt]);
+
   return (
     <Input
       type="text"
