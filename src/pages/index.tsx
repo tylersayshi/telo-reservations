@@ -38,9 +38,9 @@ export default async function HomePage() {
   ][];
 
   return (
-    <div className="mt-6 flex w-[850px] flex-col gap-2">
+    <div className="mt-2 flex w-[850px] flex-col gap-2">
       <SearchInput />
-      <div className="relative overflow-y-hidden rounded-lg border-2 border-solid border-black/20 dark:border-white/20">
+      <div className="relative mx-1 overflow-y-hidden rounded-lg border-2 border-solid border-black/20 dark:border-white/20">
         <TeloTable rows={rows} headerRow={headerRow} />
       </div>
     </div>

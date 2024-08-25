@@ -8,6 +8,7 @@ export const SearchInput = () => {
 
   return (
     <Input
+      className="mx-1"
       type="text"
       placeholder="Search for receipt..."
       onChange={(e) => router.replace(`#${e.target.value}`)}
