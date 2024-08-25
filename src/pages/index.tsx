@@ -50,7 +50,7 @@ export default async function HomePage() {
   const ids = new Set(rows.map((row) => row[0]!));
 
   return (
-    <div className="mt-2 flex w-[850px] flex-col gap-2">
+    <div className="mt-2 flex w-full max-w-[850px] flex-col gap-2">
       <SearchInput ids={ids} />
       <TeloTable rows={rowsAsReservations} />
     </div>

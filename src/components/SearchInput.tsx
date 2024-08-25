@@ -17,7 +17,6 @@ export const SearchInput = ({ ids }: { ids: Set<string> }) => {
 
   return (
     <Input
-      className="mx-1"
       type="text"
       placeholder="Search for receipt..."
       onChange={(e) => setSearch(e.target.value)}

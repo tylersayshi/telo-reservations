@@ -14,7 +14,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         <Header />
-        <main className="flex items-center justify-center lg:min-h-svh">
+        <main className="flex items-center justify-center px-1 lg:min-h-svh">
           {children}
         </main>
       </body>
