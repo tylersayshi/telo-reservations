@@ -22,6 +22,7 @@ const columns: ColumnDef<Reservation>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          className="-ml-4"
         >
           Pre-Order Number
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -37,6 +38,7 @@ const columns: ColumnDef<Reservation>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          className="-ml-4"
         >
           Use
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -52,6 +54,7 @@ const columns: ColumnDef<Reservation>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          className="-ml-4"
         >
           Date
           <ArrowUpDown className="ml-2 h-4 w-4" />
