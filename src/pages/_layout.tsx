@@ -17,6 +17,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <Header />
         <main className="flex items-center justify-center px-1 lg:min-h-svh">
           {children}
+          <img
+            src="https://app.piratepx.com/ship?p=67d07cf8-d340-46cf-8560-6e9b462d1d7e"
+            suppressHydrationWarning
+          />
         </main>
       </body>
     </html>
