@@ -1,7 +1,5 @@
 'use client';
 
-import { useRouter_UNSTABLE } from 'waku';
-
 import { ColumnDef } from '@tanstack/react-table';
 import { Reservation } from '../types';
 import { DataTable } from './ui/data-table';
