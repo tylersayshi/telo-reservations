@@ -12,10 +12,10 @@
     "@radix-ui/react-slot": "^1.1.0",
     "googleapis": "^144.0.0",
     "lucide-react": "^0.451.0",
-    "react": "19.0.0-rc-df5f2736-20240712",
-    "react-dom": "19.0.0-rc-df5f2736-20240712",
-    "react-server-dom-webpack": "19.0.0-rc-df5f2736-20240712",
-    "waku": "^0.21.3"
+    "react": "19.0.0-rc-bf7e210c-20241017",
+    "react-dom": "19.0.0-rc-bf7e210c-20241017",
+    "react-server-dom-webpack": "19.0.0-rc-bf7e210c-20241017",
+    "waku": "^0.21.5"
   },
   "devDependencies": {
     "@tanstack/react-table": "^8.20.5",
