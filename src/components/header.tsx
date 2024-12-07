@@ -1,6 +1,3 @@
-import { Suspense } from 'react';
-import { ThemeToggle } from './ThemeToggle';
-
 export const Header = () => {
   return (
     <header className="flex w-full p-6 pb-2">
@@ -31,10 +28,6 @@ export const Header = () => {
             Source
           </a>
         </div>
-
-        <Suspense>
-          <ThemeToggle />
-        </Suspense>
       </div>
     </header>
   );
