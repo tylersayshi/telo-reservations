@@ -5,6 +5,9 @@ const config = {
   content: ['./src/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
+    fontFamily: {
+      sans: ['Chalkboard', 'sans-serif'],
+    },
     container: {
       center: true,
       padding: '2rem',
