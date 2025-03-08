@@ -15,7 +15,7 @@
     "react": "19.0.0-rc-7283a213-20241206",
     "react-dom": "19.0.0-rc-7283a213-20241206",
     "react-server-dom-webpack": "19.0.0-rc-7283a213-20241206",
-    "waku": "^0.21.7"
+    "waku": "^0.21.22"
   },
   "devDependencies": {
     "@tanstack/react-table": "^8.20.5",

@@ -9,10 +9,8 @@ type RootLayoutProps = { children: ReactNode };
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <head>
-        <title>Telo Reservations</title>
-        <link rel="icon" href="/images/favicon.png" />
-      </head>
+      <title>Telo Reservations</title>
+      <link rel="icon" href="/images/favicon.png" />
       <div className="max-h-screen overflow-hidden">
         <Header />
         <main className="flex items-center justify-center px-1">

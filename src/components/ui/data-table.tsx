@@ -71,7 +71,7 @@ export function DataTable<TData extends Reservation, TValue>({
 
   return (
     <div
-      className="relative max-h-[70vh] overflow-auto rounded-lg border-2 border-solid border-black/20 dark:border-white/20 lg:max-h-[80vh]"
+      className="relative max-h-[70vh] overflow-auto rounded-lg border-2 border-solid border-black/20 lg:max-h-[80vh] dark:border-white/20"
       ref={parentRef}
     >
       <div style={{ height: virtualizer.getTotalSize() }}>
